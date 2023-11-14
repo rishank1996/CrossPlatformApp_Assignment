@@ -5,8 +5,8 @@ import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 void main() async {
   // Initialize the back4app api
   WidgetsFlutterBinding.ensureInitialized();
-  const keyApplicationId = 'xnyaZgkjwRetT0PdTplrXcjx9Ho4iu2sGOTLIB47';
-  const keyClientKey = 'KQuP2pOr8CN8YqqJgx38emzw8oZFdO0xWaBl6DKG';
+  const keyApplicationId = 'YOUR_APP_ID_HERE';
+  const keyClientKey = 'YOUR_CLIENT_KEY_HERE';
   const keyParseServerUrl = 'https://parseapi.back4app.com';
 
   await Parse().initialize(keyApplicationId, keyParseServerUrl,
@@ -94,11 +94,11 @@ class _TaskHomePageState extends State<TaskHomePage> {
               switch (snapshot.connectionState) {
                 case ConnectionState.none:
                 case ConnectionState.waiting:
-                  return Center(
-                    child: Container(
+                  return const Center(
+                    child: SizedBox(
                         width: 100,
                         height: 100,
-                        child: const CircularProgressIndicator()),
+                        child: CircularProgressIndicator()),
                   );
                 default:
                   if (snapshot.hasError) {
